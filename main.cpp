@@ -2,7 +2,7 @@
 #include "stack.cpp"
 using namespace std;
 int main() {
-  Stack s1(5);
+  Stack <int> s1(5);
 
   s1.push(10);
   s1.push(20);

@@ -1,21 +1,23 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+template <typename T>
+
 class Stack{
 private:
-int *data;
+T *data;
 int nextindex=0;
 int capacity;
 public:
 Stack(int totalSize){
-data=new int[capacity];
+data=new T[capacity];
 capacity=totalSize;
 }
 
 /*
 top 
 */
-int top(){
+T top(){
 return data[nextindex-1];
 }
 
@@ -27,17 +29,17 @@ bool isEmpty(){
   return false;
 }
 
-void push(int value){
+void push(T value){
 if(nextindex==capacity)
 cout<<"stack is full";
 data[nextindex]=value;
 nextindex++;
 }
 
-int pop(){
+T pop(){
   if(isEmpty())
      return 0; // stack is empty
-  int value=data[nextindex];
+  T value=data[nextindex];
   nextindex--;
 return value;
 }
