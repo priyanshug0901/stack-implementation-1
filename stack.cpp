@@ -9,9 +9,10 @@ T *data;
 int nextindex=0;
 int capacity;
 public:
-Stack(int totalSize){
-data=new T[capacity];
-capacity=totalSize;
+
+Stack(){
+data=new T[4];
+capacity=4;
 }
 
 /*
@@ -30,8 +31,13 @@ bool isEmpty(){
 }
 
 void push(T value){
-if(nextindex==capacity)
-cout<<"stack is full";
+if(nextindex==capacity){
+capacity *=2;
+T* newArray=new T[capacity];
+newArray=data;
+delete data;
+data=newArray;
+}
 data[nextindex]=value;
 nextindex++;
 }
